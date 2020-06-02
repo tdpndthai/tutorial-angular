@@ -1,0 +1,76 @@
+<div class="container">
+  <h3>Payment Form</h3>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Name</label>
+      <input class="form-control" type="text" (input)="onChangeName($event.target.value)">
+    </div>
+
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{name | titlecase}}
+        <!--tự động viết hoa chữ đầu dòng-->
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Date</label>
+      <input class="form-control" type="date" (input)="onDateChange($event.target.value)">
+    </div>
+
+    <div class="col">
+      <label><b>Date</b></label>
+      <div>
+        {{date | date:'MMMM d, y'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Amount</label>
+      <input class="form-control" type="text" (input)="onAmountChange($event.target.value)">
+    </div>
+
+    <div class="col">
+      <label><b>Amount</b></label>
+      <div>
+        {{amount | currency: 'VND'}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Height</label>
+      <input class="form-control" type="text" (input)="onChangeHeight($event.target.value)">
+    </div>
+
+    <div class="col">
+      <label><b>Height</b></label>
+      <div>
+        {{height | number: '1.1-3' }}
+        <!--in ra tối đa từ 1-> 3 sau thập phân-->
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <label>Payment Miles</label>
+        <input class="form-control" type="text" (input)="onChangeMiles($event.target.value)">
+      </div>
+    
+      <div class="col">
+        <label><b>Miles</b></label>
+        <div>
+          {{miles | convert}}
+          <!--in ra tối đa từ 1-> 3 sau thập phân-->
+        </div>
+      </div>
+    </div>
+</div>
+
+{{car | json}}
