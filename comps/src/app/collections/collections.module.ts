@@ -11,6 +11,7 @@ import { CollectionsHomeComponent } from './collections-home/collections-home.co
     CommonModule,
     CollectionsRoutingModule
   ],
-  exports:[CollectionsHomeComponent]
+  //xuất ra để cho các module khác có thể gọi được
+  //exports:[CollectionsHomeComponent]
 })
 export class CollectionsModule { }
